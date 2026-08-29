@@ -1,0 +1,10 @@
+{
+  "version": "1.0.10",
+  "required": false,
+  "title": "Atualizador por commit",
+  "notes": "Updater agora detecta qualquer commit novo no GitHub automaticamente, sem precisar editar a versao manualmente.",
+  "updateMode": "download-on-start-install-on-next-start",
+  "repository": "https://github.com/ShazamScripts/Custom-DBO",
+  "manifest": "https://raw.githubusercontent.com/ShazamScripts/Custom-DBO/main/update.json",
+  "tree": "https://api.github.com/repos/ShazamScripts/Custom-DBO/git/trees/main?recursive=1"
+}

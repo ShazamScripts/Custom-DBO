@@ -1,0 +1,560 @@
+{
+  "rtsFollowOn": true,
+  "foodItems": [
+    {
+      "count": 1,
+      "id": 3577
+    }
+  ],
+  "configMystic": {
+    "defenseCooldown": 1000,
+    "defenseTime": 24080541,
+    "kaiTime": 24080541,
+    "kaiCooldown": 1000,
+    "macroActive": false,
+    "kaiCast": 80,
+    "defenseSpell": "Mystic Defense",
+    "enabledKai": true,
+    "defenseCast": 50,
+    "kaiSpell": "Mystic Cancel"
+  },
+  "buyAol": false,
+  "tyrFriendlist": [
+    "Luan Cabecaoval"
+  ],
+  "ES_Players": [
+
+  ],
+  "senseNames": {
+    "targetName": "Pirrocudo"
+  },
+  "looting": {
+    "items": [
+
+    ],
+    "status": true,
+    "only_ok": true,
+    "containers": [
+
+    ],
+    "loot_all": true
+  },
+  "hasteSpell": "Super Speed",
+  "comboLeader": {
+    "leaders": [
+
+    ]
+  },
+  "CLOSE_ID": 11782,
+  "healthSenzuId": 11861,
+  "stairsIds": [
+    {
+      "count": 1,
+      "id": 1666
+    },
+    {
+      "count": 1,
+      "id": 6207
+    },
+    {
+      "count": 1,
+      "id": 1948
+    },
+    {
+      "count": 1,
+      "id": 435
+    },
+    {
+      "count": 1,
+      "id": 7771
+    },
+    {
+      "count": 1,
+      "id": 5542
+    },
+    {
+      "count": 1,
+      "id": 8657
+    },
+    {
+      "count": 1,
+      "id": 6264
+    },
+    {
+      "count": 1,
+      "id": 1646
+    },
+    {
+      "count": 1,
+      "id": 1648
+    },
+    {
+      "count": 1,
+      "id": 1678
+    },
+    {
+      "count": 1,
+      "id": 5291
+    },
+    {
+      "count": 1,
+      "id": 1680
+    },
+    {
+      "count": 1,
+      "id": 6905
+    },
+    {
+      "count": 1,
+      "id": 6262
+    },
+    {
+      "count": 1,
+      "id": 1664
+    },
+    {
+      "count": 1,
+      "id": 13296
+    },
+    {
+      "count": 1,
+      "id": 1067
+    },
+    {
+      "count": 1,
+      "id": 13861
+    },
+    {
+      "count": 1,
+      "id": 11931
+    },
+    {
+      "count": 1,
+      "id": 1949
+    },
+    {
+      "count": 1,
+      "id": 6896
+    },
+    {
+      "count": 1,
+      "id": 6205
+    },
+    {
+      "count": 1,
+      "id": 13926
+    },
+    {
+      "count": 1,
+      "id": 1947
+    },
+    {
+      "count": 1,
+      "id": 12097
+    },
+    {
+      "count": 1,
+      "id": 615
+    },
+    {
+      "count": 1,
+      "id": 1678
+    },
+    {
+      "count": 1,
+      "id": 8367
+    }
+  ],
+  "regenSpell": "Super regeneration",
+  "battleTracking": [
+    0,
+    268436774,
+    [
+
+    ]
+  ],
+  "checkBoxs": {
+    "healthSenzu": true,
+    "castFood": false,
+    "manaSenzu": true
+  },
+  "attackingFunctions": [
+
+  ],
+  "attackEnemy": {
+    "macroActive": false
+  },
+  "pvpPanel": {
+    "openMainBag": true,
+    "mwId": 12105
+  },
+  "ES_Spells": [
+
+  ],
+  "storageTrainer": {
+    "enableWebHook": false,
+    "changeItemOrSpell": false,
+    "trainerPhrase": "",
+    "spellTrain": "",
+    "modeTrainer": false,
+    "modeHunt": false,
+    "itemId": 0,
+    "percentTrain": 90,
+    "trainerName": "",
+    "enableChannel": false,
+    "spellRecover": "",
+    "lowCpu": false,
+    "macroEnabled": false,
+    "showSkills": false,
+    "playersScreen": false,
+    "attackTrainer": false,
+    "WebHookText": "",
+    "autoWalk": false
+  },
+  "TravelSystem": {
+    "minoru": {
+      "index": 1
+    },
+    "active": true,
+    "gate keaper": {
+      "cities": [
+        "Earth",
+        "Ice City",
+        "Kanassa",
+        "Namekjin Island",
+        "Premia",
+        "Tsufur",
+        "Vegeta",
+        "Zelta"
+      ],
+      "index": 2,
+      "talkActions": [
+        "hi"
+      ]
+    }
+  },
+  "stackConfig": {
+    "stackSpell": "Corrupt Chidori",
+    "macroActive": false,
+    "maxDistance": 5
+  },
+  "scrollBars": {
+    "healthSenzu": 99,
+    "enemyMinLevel": 150,
+    "delayMana": 300,
+    "regenPercent": 100,
+    "macroDelay": 200,
+    "delayHealth": 300,
+    "manaSenzu": 99
+  },
+  "rtsFollow": "Name",
+  "config": {
+    "followTarget": {
+      "actionKey": "Tab",
+      "iconId": 80
+    },
+    "stairs": {
+      "actionKey": "Space",
+      "iconId": 52
+    },
+    "mystic": {
+      "iconId": 56
+    },
+    "comboLeader": {
+      "iconId": 89
+    },
+    "bugMap": {
+      "extra": {
+        "Left": "A",
+        "Right": "D",
+        "Up": "W",
+        "Down": "S"
+      },
+      "iconId": 85
+    },
+    "especiais": {
+      "iconId": 56
+    },
+    "sense": {
+      "extra": {
+        "senseTarget": "T",
+        "senseLast": "V"
+      },
+      "iconId": 30
+    },
+    "antiTrap": {
+      "iconId": 83
+    },
+    "push": {
+      "iconId": 88
+    },
+    "enemy": {
+      "iconId": 79
+    },
+    "keepTarget": {
+      "actionKey": "Escape",
+      "iconId": 2
+    },
+    "combo": {
+      "iconId": 38
+    }
+  },
+  "antired_data": {
+    "enabled": true,
+    "amountOfMonsters": 2,
+    "targetSpells": [
+      {
+        "enabled": true,
+        "cooldownTotal": 0,
+        "spellName": "final shine"
+      },
+      {
+        "enabled": true,
+        "cooldownTotal": 0,
+        "spellName": "soudou yari"
+      }
+    ],
+    "areaSpells": [
+      {
+        "enabled": true,
+        "cooldownTotal": 0,
+        "spellName": "full power energy wave"
+      }
+    ]
+  },
+  "widgetPos": {
+    "pkTimeWidget": {
+      "y": 179,
+      "x": 876
+    },
+    "pvpButton": {
+      "y": 187,
+      "x": 1218
+    },
+    "antiRedTime": {
+      "y": 197,
+      "x": 601
+    }
+  },
+  "especiaisConfig": {
+    "attackers": [
+
+    ],
+    "spells": {
+      "Stack": [
+
+      ],
+      "Outros": [
+
+      ],
+      "Fugas": [
+
+      ],
+      "Buffs": [
+        {
+          "cooldownTotal": 2,
+          "spellName": "super speed",
+          "showMsg": "super speed",
+          "enabled": true,
+          "key": "AUTO",
+          "index": 1,
+          "activeTotal": 0,
+          "orangeMsg": "super speed",
+          "cooldownTime": 1788019435,
+          "type": "Buffs"
+        },
+        {
+          "type": "Buffs",
+          "cooldownTotal": 30,
+          "spellName": "power up",
+          "showMsg": "power up",
+          "cooldownTime": 1788010605,
+          "enabled": true,
+          "index": 2,
+          "activeTotal": 30,
+          "orangeMsg": "power up",
+          "key": "AUTO",
+          "activeTime": 1788010605
+        }
+      ],
+      "Retas": [
+
+      ],
+      "Traps": [
+
+      ]
+    },
+    "showInfo": true,
+    "battlePos": {
+      "y": 263,
+      "x": 917
+    },
+    "enabled": true,
+    "selected_type": "Buffs"
+  },
+  "taskData": [
+
+  ],
+  "_sense_spell": "Sense",
+  "_macros": {
+    "": true,
+    "Push": false,
+    "Follow RTS": true,
+    "Follow Target": false,
+    "Invitar PT": false,
+    "Escadas": false,
+    "Sense": true,
+    "Attack Target": true,
+    "Aceitar PT": false,
+    "Bug Map": false
+  },
+  "mwPos": [
+
+  ],
+  "sealedTypes": [
+
+  ],
+  "mouseShortcuts_data": {
+    "entries": [
+
+    ],
+    "enabled": false
+  },
+  "task": [
+
+  ],
+  "ES": false,
+  "castFoodSpell": "shokuji no jutsu",
+  "battleFilter": {
+    "hidePlayers": false,
+    "hideMonsters": false,
+    "hideNPCs": false,
+    "hideSkulls": false,
+    "hideFriends": false
+  },
+  "_configs": {
+    "cavebot_configs": {
+      "enabled": true,
+      "selected": "Cell"
+    },
+    "targetbot_configs": {
+      "enabled": true,
+      "selected": "Target"
+    }
+  },
+  "attackingPlayers": [
+
+  ],
+  "castFood": false,
+  "RevideFight": {
+    "followTarget": true,
+    "pauseCave": true,
+    "pauseTarget": true,
+    "ignoreParty": false,
+    "attackAll": false,
+    "enabled": true,
+    "ignoreGuild": false,
+    "esc": "Escape"
+  },
+  "ignoringFunctions": [
+
+  ],
+  "_icons": {
+    "shazamTarget": {
+      "y": 0.25,
+      "x": 0.01
+    },
+    "shazamCave": {
+      "y": 0.05,
+      "x": 0.01
+    }
+  },
+  "antiRedTime": 39577370,
+  "comboConfig": {
+    "spells": {
+      "Combo 5": [
+
+      ],
+      "Combo 4": [
+
+      ],
+      "Combo 3": [
+
+      ],
+      "Combo 1": [
+        {
+          "enabled": true,
+          "index": 1,
+          "spellName": "soudou yari"
+        },
+        {
+          "enabled": true,
+          "cooldownTime": 39576.344,
+          "index": 2,
+          "distance": 0,
+          "orangeMsg": "final shine",
+          "cooldownTotal": 0,
+          "spellName": "inal shine"
+        }
+      ],
+      "Combo 2": [
+        {
+          "enabled": true,
+          "index": 1,
+          "spellName": "full power energy wave"
+        }
+      ]
+    },
+    "enabled": false,
+    "selected_type": "Combo 2"
+  },
+  "manaSenzuId": 11861,
+  "trainerData": {
+    "checkRegen": false,
+    "manaPercent": 50,
+    "checkPotion": false,
+    "spellTraining": "power down",
+    "spellRegen": "",
+    "enabled": false
+  },
+  "buyBless": false,
+  "excludeIds": [
+    {
+      "count": 1,
+      "id": 12099
+    },
+    {
+      "count": 1,
+      "id": 17393
+    }
+  ],
+  "DIST_ID": 11819,
+  "alarms": {
+    "playerDetected": false,
+    "healthValue": 40,
+    "playerDetectedLogout": false,
+    "playerAttack": false,
+    "manaBelow": false,
+    "creatureDetected": false,
+    "healthBelow": false,
+    "enabled": false,
+    "manaValue": 50,
+    "privateMessage": false
+  },
+  "caveBotTasker": {
+    "max": 0,
+    "monster": "",
+    "inProgress": false,
+    "count": 0,
+    "taskName": ""
+  },
+  "changeWeapon": true,
+  "ptSystem": {
+    "aceitar": false,
+    "invitar": false
+  },
+  "_custom_img_name": "gokublack",
+  "autoKaiConfig": {
+    "macroActive": false
+  }
+}
