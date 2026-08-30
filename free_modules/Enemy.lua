@@ -189,14 +189,31 @@ end)
 -- sabemos o level dele, o bot da "look" nele sozinho (throttle de 1 a
 -- cada 2s pra nao floodar o servidor) ate conseguir o level pelo texto
 -- acima. Assim voce nao precisa dar look manual em todo mundo.
+-- Antes: 1 look a cada 2s no TOTAL (mesmo com varios players desconhecidos
+-- na tela, so um por vez, bem devagar). Agora: throttle por criatura (cada
+-- player so pode ser "olhado" de novo apos PER_CREATURE_LOOK_INTERVAL ms) +
+-- um intervalo minimo global bem menor so pra nao floodar o server. Assim,
+-- com varios inimigos novos na tela, o bot da look em varios rapidamente
+-- (um por vez, mas sem esperar 2s entre cada) e descobre os levels muito
+-- mais rapido.
+local lastLookByCreature = {};
+local GLOBAL_LOOK_INTERVAL = 200; -- ms minimos entre dois looks quaisquer (anti-flood)
+local PER_CREATURE_LOOK_INTERVAL = 700; -- ms minimos pra olhar o MESMO player de novo
+
 local nextLookAllowedAt = 0;
 local tryAutoLook = function(creature)
 	local now = g_clock and g_clock["millis"] and g_clock["millis"]() or (os["time"]() * 1000);
 	if (now < nextLookAllowedAt) then return; end
+
+	local id = creature:getId();
+	local lastLook = lastLookByCreature[id];
+	if (lastLook and (now - lastLook) < PER_CREATURE_LOOK_INTERVAL) then return; end
+
 	if (type(g_game) == "table" and type(g_game["look"]) == "function") then
 		local ok = pcall(g_game["look"], creature);
 		if (ok) then
-			nextLookAllowedAt = now + 2000;
+			nextLookAllowedAt = now + GLOBAL_LOOK_INTERVAL;
+			lastLookByCreature[id] = now;
 		end
 	end
 end
@@ -213,15 +230,16 @@ enemyLevelWidget["scroll"]["onValueChange"] = function(scroll, value)
 	enemyLevelWidget["scroll"]:setText("Nivel minimo: " .. value);
 end
 enemyLevelWidget["scroll"]["onValueChange"](enemyLevelWidget["scroll"], enemyLevelWidget["scroll"]:getValue());
-enemyLevelWidget["scroll"]:setTooltip("So ataca players com level confirmado maior ou igual a esse valor. Enquanto o level nao e confirmado (via look), o bot NAO ataca.");
+enemyLevelWidget["scroll"]:setTooltip("So NAO ataca players com level confirmado abaixo desse valor. Enquanto o level ainda nao foi confirmado (via look), o bot ataca normalmente.");
 
--- TRAVADO: enquanto o level nao for confirmado (via look/auto-look), o
--- bot NUNCA ataca. So ataca quando o level ja esta no cache e e >= ao
--- minimo configurado no slider acima. Isso e o que impede atacar player
--- de level baixo (150-) por engano so porque o level ainda nao chegou.
+-- ATUALIZADO: o bot NAO espera mais a confirmacao de level pra atacar.
+-- Ele ataca assim que ve um alvo valido (nao amigo/guild). O look
+-- automatico continua rodando em paralelo so pra alimentar o cache;
+-- so bloqueia o ataque quando ja se SABE que o level esta abaixo do
+-- minimo configurado no slider acima.
 
--- Retorna: true = pode atacar (level confirmado e >= minimo),
--- false = NAO pode atacar (level baixo demais OU ainda desconhecido).
+-- Retorna: true = pode atacar (level >= minimo OU ainda desconhecido),
+-- false = NAO pode atacar (ja confirmado que o level e baixo demais).
 local passesLevelFilter = function(creature, selfName)
 	local minLevel = storage["scrollBars"]["enemyMinLevel"] or 150;
 	if (minLevel <= 0) then return true; end -- filtro desligado (slider em 0)
@@ -231,10 +249,10 @@ local passesLevelFilter = function(creature, selfName)
 		return cached["level"] >= minLevel;
 	end
 
-	-- level ainda desconhecido: tenta descobrir para a proxima checagem,
-	-- mas NAO ataca agora.
+	-- level ainda desconhecido: tenta descobrir (pro cache, futuras checagens),
+	-- mas AGORA ataca de qualquer forma em vez de esperar a confirmacao.
 	tryAutoLook(creature);
-	return false;
+	return true;
 end
 
 
