@@ -252,7 +252,8 @@ for _, file in ipairs({
     "Attack.lua",
     "Getattackingcreature.lua",
     "Order_say.lua",
-    "Queue_call.lua"
+    "Queue_call.lua",
+    "Bless.lua",
 }) do
     loadInTab("Main", file)
 end
