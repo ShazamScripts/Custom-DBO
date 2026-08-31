@@ -578,9 +578,6 @@ test1:move(550, 500)
 
 local targetHpThreshold = 20
  
-UI.Separator()
-
-
 -- Atualização/Limpeza do target ID.
 macro(1, function()
     local target = g_game.getAttackingCreature();
