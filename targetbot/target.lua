@@ -116,11 +116,28 @@ ui.editor.debug.onClick = function()
     end
 end
 
+-- FIX (Slow macro): esse loop faz findPath (o calculo mais pesado do bot)
+-- pra cada monstro proximo, a cada ciclo. Em area cheia isso podia passar
+-- de 100ms (ex: 120ms, 181ms nos logs). Duas mudancas:
+-- 1) intervalo subiu de 100ms pra 150ms, dando mais folga real pro calculo
+--    terminar dentro do prazo sem deixar o TargetBot perceptivelmente mais
+--    lento pra reagir (a diferenca de 50ms e imperceptivel pro jogador).
+-- 2) a decisao de reduzir a area de busca agora conta so MONSTROS (que sao
+--    o que realmente custa caro, via findPath) em vez de todas as criaturas
+--    (que incluia players parados do lado, que nunca entravam no findPath
+--    mesmo antes). Isso faz a reducao de area disparar exatamente quando
+--    precisa, e nao antes/depois da hora.
 -- main loop, controlled by config
-targetbotMacro = macro(100, function()
+targetbotMacro = macro(150, function()
     local pos = player:getPosition()
     local creatures = g_map.getSpectatorsInRange(pos, false, 6, 6) -- 12x12 area
-    if #creatures > 10 then -- if there are too many monsters around, limit area
+    local monsterCount = 0
+    for i, creature in ipairs(creatures) do
+        if creature:isMonster() then
+            monsterCount = monsterCount + 1
+        end
+    end
+    if monsterCount > 6 then -- se tem muito monstro por perto, reduz a area (menos findPath por ciclo)
         creatures = g_map.getSpectatorsInRange(pos, false, 3, 3) -- 6x6 area
     end
     local highestPriority = 0
