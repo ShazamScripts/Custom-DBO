@@ -289,6 +289,7 @@ for _, file in ipairs({
     "Especiais.lua",
     "Mystic.lua",
     "Target.lua",          -- Attack Target
+    "Virar Pro Target.lua",
 }) do
     loadInTab("Main", file)
 end
