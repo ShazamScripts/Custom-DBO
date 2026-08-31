@@ -304,6 +304,7 @@ for _, file in ipairs({
     "Auto_kai.lua",        -- Anti Trap
     "Friend_list.lua",     -- Janela de amigos (precisa carregar antes do Enemy.lua)
     "Follow_target.lua",
+    "Xeracu.lua",
     "Revide.lua",          -- Fight Back: revida quem te atacar
 }) do
     loadInTab("Main", file)
