@@ -285,6 +285,7 @@ safeLoad("/extras/main.lua")   -- este cria o label no topo
 setDefaultTab("Main")
 for _, file in ipairs({
     "Combo.lua",
+    "Senzu.lua",
     "AntiRed.lua",
     "enemytimespell.lua",
     "Especiais.lua",
